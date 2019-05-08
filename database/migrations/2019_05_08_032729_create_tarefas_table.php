@@ -15,6 +15,15 @@ class CreateTarefasTable extends Migration
     {
         Schema::create('tarefas', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('titulo');
+            $table->boolean('privacidade');
+            $table->string('descricao');
+            $table->boolean('status');
+            $table->date('data');
+            $table->integer('id_tipo')->unsigned();
+            $table->foreign('id_tipo')->references('tipos')->on('id');
+            $table->integer('id_usuario')->unsigned();
+            $table->foreign('id_usuario')->references('users')->on('id');
             $table->timestamps();
         });
     }
