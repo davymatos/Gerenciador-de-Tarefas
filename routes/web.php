@@ -11,8 +11,9 @@
 |
 */
 
-Route::get('/menu', function () {
+Route::get('/', function () {
     return view('base.menu');
 });
+Route::resource('tarefas', 'TarefaController');
 
 Auth::routes();

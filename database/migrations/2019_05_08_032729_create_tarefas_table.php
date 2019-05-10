@@ -20,10 +20,10 @@ class CreateTarefasTable extends Migration
             $table->string('descricao');
             $table->boolean('status');
             $table->date('data');
-            $table->integer('id_tipo')->unsigned();
-            $table->foreign('id_tipo')->references('tipos')->on('id');
-            $table->integer('id_usuario')->unsigned();
-            $table->foreign('id_usuario')->references('users')->on('id');
+            $table->bigInteger('tipo_id')->unsigned();
+            $table->foreign('tipo_id')->references('id')->on('tipos');
+            $table->bigInteger('usuario_id')->unsigned();
+            $table->foreign('usuario_id')->references('id')->on('users');
             $table->timestamps();
         });
     }

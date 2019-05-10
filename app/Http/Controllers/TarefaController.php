@@ -14,7 +14,8 @@ class TarefaController extends Controller
      */
     public function index()
     {
-        //
+        $tarefas = Tarefa::all();
+        return view('lista_tarefas', compact('tarefas'));
     }
 
     /**
@@ -24,7 +25,7 @@ class TarefaController extends Controller
      */
     public function create()
     {
-        //
+        return view('cadastrar_tarefa');
     }
 
     /**
