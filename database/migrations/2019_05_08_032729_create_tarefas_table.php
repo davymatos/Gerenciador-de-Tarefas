@@ -16,10 +16,10 @@ class CreateTarefasTable extends Migration
         Schema::create('tarefas', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('titulo');
-            $table->boolean('privacidade');
+            $table->string('privacidade');
             $table->string('descricao');
-            $table->boolean('status');
-            $table->date('data');
+            $table->string('status');
+            $table->string('data');
             $table->bigInteger('tipo_id')->unsigned();
             $table->foreign('tipo_id')->references('id')->on('tipos');
             $table->bigInteger('usuario_id')->unsigned();

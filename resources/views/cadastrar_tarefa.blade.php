@@ -3,8 +3,8 @@
 @section('conteudo')
     <form action = "{{route('tarefas.store')}}" method = "POST">
       @csrf
-      <div class="container">
-          <h4>Cadastro de Tarefas</h4>
+      <div class="container tela">
+          <h4 align="center">Cadastro de Tarefas</h4>
         <div class="row">
             <div class="col">
                 <label for="titulo">Titulo</label>
