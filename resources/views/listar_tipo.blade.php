@@ -1,4 +1,4 @@
-@extends('base.menu', ["current"=>"tarefas"])
+@extends('base.menu', ["current"=>"tipos"])
 
 @section('conteudo')
 <div class="container tela">
@@ -7,21 +7,14 @@
             <thead>
                 <tr>
                 <th scope="col">id</th>
-                <th scope="col">Titulo</th>
-                <th scope="col">Privacidade</th>
-                <th scope="col">Descrição</th>
-                <th scope="col">Status</th>
-                <th scope="col">Data de Conclusão</th>
+                <th scope="col">Nome</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach($tarefas as $tar)
+                @foreach($tipos as $tip)
                 <tr>       
-                    <td>{{$tar->id}}</td>
-                    <td>{{$tar->titulo}}</td>
-                    <td>{{$tar->privacidade}}</td>
-                    <td>{{$tar->descricao}}</td>
-                    <td>{{$tar->data}}</td>
+                    <td>{{$tip->id}}</td>
+                    <td>{{$tip->nome}}</td>
                     <td>
                         <form>
                         <a class = "btn btn-success">Editar</a>

@@ -26,6 +26,45 @@
                         </div>
 
                         <div class="form-group row">
+                            <label for="phone" class="col-md-4 col-form-label text-md-right">{{ __('phone') }}</label>
+                            <div class="col-md-6">
+                                <input  type = "text" class = "form-control" id="phone" name="phone" placeholder="" value="" required>
+                                
+                                @error('phone')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="sex" class="col-md-4 col-form-label text-md-right">{{ __('Sex') }}</label>
+                            <div class="col-md-6">
+                                <input  type = "text" class = "form-control" id="sex" name="sex" placeholder="" value="" required>
+                                
+                                @error('sex')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="date" class="col-md-4 col-form-label text-md-right">{{ __('Date') }}</label>
+                            <div class="col-md-6">
+                                <input  type = "text" class = "form-control" id="date" name="date" placeholder="" value="" required>
+                                
+                                @error('date')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
                             <div class="col-md-6">

@@ -14,7 +14,8 @@ class TipoController extends Controller
      */
     public function index()
     {
-        //
+        $tipos = Tipo::all();
+        return view('listar_tipo', compact('tipos'));
     }
 
     /**
@@ -24,7 +25,7 @@ class TipoController extends Controller
      */
     public function create()
     {
-        //
+        return view('cadastrar_tipo');
     }
 
     /**
@@ -35,7 +36,10 @@ class TipoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $tipo = new tipo();
+        $tipo->nome = $request->input("nome");
+        $tipo->save();
+        return redirect()->route('tipos.index');
     }
 
     /**
