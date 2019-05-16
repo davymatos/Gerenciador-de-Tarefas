@@ -21,7 +21,7 @@
                       Usuario
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{route('users.index')}}">Visualizar</a>
+                            <a class="dropdown-item" href="">Visualizar</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">
@@ -47,10 +47,13 @@
 
                 <ul class="nav justify-content-end cadastro">
                     <li class="nav-item">
-                        <a class="nav-link" href="register">Cadstrar</a>
+                        {{Auth::user()->name}}
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="login">Login</a>
+                        <form action="{{route('logout')}}" method="POST">
+                            @csrf
+                            <button class="btn btn-outline-primary" type="submit">Logout</button>
+                        </form>
                     </li>
                 </ul>
             </ul>
