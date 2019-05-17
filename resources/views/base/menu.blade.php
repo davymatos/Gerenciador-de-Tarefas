@@ -11,21 +11,22 @@
         <title>Gerenciador de Tarefas</title>
         <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
         <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+        <link rel="icon" type="imagem/png" href="public/img/icon.png" />
     </head>
     </head>
     <body>
-        <div>
+        <div class="navbar">
             <ul class="nav nav-pills nav">
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="dropusuario" role="button" data-toggle="dropdown"  aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle bg-transparent text-dark" href="#" id="dropusuario" role="button" data-toggle="dropdown"  aria-haspopup="true" aria-expanded="false">
                       Usuario
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="">Visualizar</a>
+                            <a class="dropdown-item" href="{{route('usuarios.index')}}">Visualizar</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="droptarefa" role="button" data-toggle="dropdown"  aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle bg-transparent text-dark" href="#" id="droptarefa" role="button" data-toggle="dropdown"  aria-haspopup="true" aria-expanded="false">
                       Tarefas
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -35,7 +36,7 @@
                     </div>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="droptipo" role="button" data-toggle="dropdown"  aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle bg-transparent text-dark" href="#" id="droptipo" role="button" data-toggle="dropdown"  aria-haspopup="true" aria-expanded="false">
                       Tipos de Tarefas
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -46,17 +47,23 @@
                 </li>
 
                 <ul class="nav justify-content-end cadastro">
-                    <li class="nav-item">
+                    <li class="nav-item usu">
                         {{Auth::user()->name}}
                     </li>
                     <li class="nav-item">
                         <form action="{{route('logout')}}" method="POST">
                             @csrf
-                            <button class="btn btn-outline-primary" type="submit">Logout</button>
+                            <button class="btn bg-transparent text-dark logout" type="submit">Logout</button>
                         </form>
                     </li>
                 </ul>
             </ul>
+        </div>
+        <div class="container-fluid body">
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-12">
+                </div>
+            </div>
         </div>
         
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

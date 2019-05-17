@@ -20,5 +20,6 @@ Route::get('/', function () {
 Route::resource('tarefas', 'TarefaController');
 //Route::resource('users', 'UserController');
 Route::resource('tipos', 'TipoController');
+Route::resource('usuarios', 'UsuarioController');
 
 Auth::routes();

@@ -2,7 +2,7 @@
     margin-left: 17px;
 }
 .cadastro{
-    margin-left: 800px;
+    margin-left: 700px;
 }
 .tela{
     padding-top: 40px;
@@ -22,4 +22,18 @@
 }
 .paragrafo{
     margin-left: -45px;
+}
+.usu{
+    padding-top: 7px;
+}
+.logout{
+    margin-left: 12px;
+}
+.navbar{
+    background-color: #F5E1DA;
+}
+.body{
+    background-color: #F1F1F1;
+    height: 602px;
+    width: 1080;
 }
