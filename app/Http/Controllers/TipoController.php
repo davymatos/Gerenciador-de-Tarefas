@@ -61,7 +61,7 @@ class TipoController extends Controller
      */
     public function edit(Tipo $tipo)
     {
-        //
+        return view('editar_tipo', compact('tipo'));
     }
 
     /**
@@ -73,7 +73,9 @@ class TipoController extends Controller
      */
     public function update(Request $request, Tipo $tipo)
     {
-        //
+        $tipo->nome = $request->input("nome");
+        $tipo->save();
+        return redirect()->route('tipos.index');
     }
 
     /**
@@ -84,6 +86,7 @@ class TipoController extends Controller
      */
     public function destroy(Tipo $tipo)
     {
-        //
+        $tipo->delete();
+        return redirect()->route('tipos.index');
     }
 }

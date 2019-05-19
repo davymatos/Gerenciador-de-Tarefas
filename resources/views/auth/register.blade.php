@@ -65,6 +65,19 @@
                         </div>
 
                         <div class="form-group row">
+                            <label for="login" class="col-md-4 col-form-label text-md-right">{{ __('Login') }}</label>
+                            <div class="col-md-6">
+                                <input  type = "text" class = "form-control" id="login" name="login" placeholder="" value="" required>
+                                
+                                @error('login')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Email') }}</label>
 
                             <div class="col-md-6">

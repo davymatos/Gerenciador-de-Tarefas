@@ -56,9 +56,9 @@ class UsuarioController extends Controller
      * @param  \App\Usuario  $usuario
      * @return \Illuminate\Http\Response
      */
-    public function edit(Usuario $usuario)
+    public function edit(User $user)
     {
-        //
+        return view('editar_usuario', compact('user'));
     }
 
     /**
@@ -68,9 +68,17 @@ class UsuarioController extends Controller
      * @param  \App\Usuario  $usuario
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Usuario $usuario)
+    public function update(Request $request, User $user)
     {
-        //
+        $user->name = $request->input("name");
+        $user->sex = $request->input("sex");
+        $user->phone = $request->input("phone");
+        $user->date = $request->input("date");
+        $user->login = $request->input("login");
+        $user->email = $request->input("email");
+        $user->password = $request->input("password");
+        $user->save();
+        return redirect()->route('users.index');
     }
 
     /**
@@ -79,8 +87,9 @@ class UsuarioController extends Controller
      * @param  \App\Usuario  $usuario
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Usuario $usuario)
+    public function destroy(User $user)
     {
-        //
+        $user->delete();
+        return redirect()->route('usuarios.index');
     }
 }

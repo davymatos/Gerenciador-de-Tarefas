@@ -17,6 +17,14 @@
                     <td>{{$use->id}}</td>
                     <td>{{$use->name}}</td>
                     <td>{{$use->email}}</td>
+                    <td>
+                        <form action = "{{route('usuarios.destroy', $use)}}" method = "POST">
+                            @csrf
+                            <a class = "btn btn-success" href="{{route('usuarios.edit', $use)}}">Editar</a>
+                            @method('DELETE')
+                            <button type = "submit" class = "btn btn-danger">Excluir</button>
+                        </form>
+                    </td>
                 </tr>
                 @endforeach
             </tbody>

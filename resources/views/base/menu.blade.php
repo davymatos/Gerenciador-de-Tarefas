@@ -48,7 +48,7 @@
 
                 <ul class="nav justify-content-end cadastro">
                     <li class="nav-item usu">
-                        {{Auth::user()->name}}
+                        
                     </li>
                     <li class="nav-item">
                         <form action="{{route('logout')}}" method="POST">

@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Tarefa;
 use App\User;
-use App\Tipo;
 use Illuminate\Http\Request;
 
 class TarefaController extends Controller
@@ -28,8 +27,8 @@ class TarefaController extends Controller
     public function create()
     {
         $users = User::all();
-        $tipos = Tipo::all();
-        return view('cadastrar_tarefa', compact('users', 'tipos'));
+        $tarefas = tarefa::all();
+        return view('cadastrar_tarefa', compact('users', 'tarefas'));
     }
 
     /**
@@ -46,8 +45,8 @@ class TarefaController extends Controller
         $tarefa->descricao = $request->input("descricao");
         $tarefa->status = $request->input("status");
         $tarefa->data = $request->input("data");
-        $tarefa->tipo_id = $request->input("tipo");
-        $tarefa->user_id = $request->input("user");
+        $tarefa->tarefa_id = $request->input("tarefa_id");
+        $tarefa->usuario_id = $request->input("usuario_id");
         $tarefa->save();
         return redirect()->route('tarefas.index');
     }
@@ -71,7 +70,7 @@ class TarefaController extends Controller
      */
     public function edit(Tarefa $tarefa)
     {
-        //
+        return view('editar_tarefa', compact('tarefa'));
     }
 
     /**
@@ -83,7 +82,15 @@ class TarefaController extends Controller
      */
     public function update(Request $request, Tarefa $tarefa)
     {
-        //
+        $tarefa->titulo = $request->input("titulo");
+        $tarefa->privacidade = $request->input("privacidade");
+        $tarefa->descricao = $request->input("descricao");
+        $tarefa->status = $request->input("status");
+        $tarefa->data = $request->input("data");
+        $tarefa->tarefa_id = $request->input("tarefa_id");
+        $tarefa->usuario_id = $request->input("usuario_id");
+        $tarefa->save();
+        return redirect()->route('tarefas.index');
     }
 
     /**
@@ -94,6 +101,7 @@ class TarefaController extends Controller
      */
     public function destroy(Tarefa $tarefa)
     {
-        //
+        $tarefa->delete();
+        return redirect()->route('tarefas.index');
     }
 }

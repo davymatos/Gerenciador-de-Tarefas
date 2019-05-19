@@ -55,6 +55,7 @@ class RegisterController extends Controller
             'phone' => ['required', 'string', 'max:15'],
             'sex' => ['required', 'string', 'max:9'],
             'date' => ['required', 'string', 'max:10'],
+            'login' => ['required', 'string', 'max:100'],
         ]);
     }
 
@@ -73,6 +74,7 @@ class RegisterController extends Controller
             'phone' => $data['phone'],
             'date' => $data['date'],
             'password' => Hash::make($data['password']),
+            'login' => $data['login'],
         ]);
     }
 }

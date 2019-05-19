@@ -12,6 +12,8 @@
                 <th scope="col">Descrição</th>
                 <th scope="col">Status</th>
                 <th scope="col">Data de Conclusão</th>
+                <th scope="col">Tipo</th>
+                <th scope="col">Usuario</th>
                 </tr>
             </thead>
             <tbody>
@@ -21,12 +23,17 @@
                     <td>{{$tar->titulo}}</td>
                     <td>{{$tar->privacidade}}</td>
                     <td>{{$tar->descricao}}</td>
+                    <td>{{$tar->status}}</td>
                     <td>{{$tar->data}}</td>
+                    <td>{{$tar->tipo_id}}</td>
+                    <td>{{$tar->usuario_id}}</td>
                     <td>
-                        <form>
-                        <a class = "btn btn-success">Editar</a>
-                        <a class = "btn btn-danger">Excluir</a>
-                        </form>
+                        <form action = "{{route('tarefas.destroy', $tar)}}" method = "POST">
+                            @csrf
+                            <a class = "btn btn-success" href="{{route('tarefas.edit', $tar)}}">Editar</a>
+                            @method('DELETE')
+                            <button type = "submit" class = "btn btn-danger">Excluir</button>
+                        </form> 
                     </td>
                 </tr>
                 @endforeach

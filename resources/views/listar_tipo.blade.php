@@ -16,9 +16,11 @@
                     <td>{{$tip->id}}</td>
                     <td>{{$tip->nome}}</td>
                     <td>
-                        <form>
-                        <a class = "btn btn-success">Editar</a>
-                        <a class = "btn btn-danger">Excluir</a>
+                        <form action = "{{route('tipos.destroy', $tip)}}" method = "POST">
+                            @csrf
+                            <a class = "btn btn-success" href="{{route('tipos.edit', $tip)}}">Editar</a>
+                            @method('DELETE')
+                            <button type = "submit" class = "btn btn-danger">Excluir</button>
                         </form>
                     </td>
                 </tr>
