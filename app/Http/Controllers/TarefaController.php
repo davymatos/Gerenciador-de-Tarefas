@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Tarefa;
 use App\User;
+use App\Tipo;
 use Illuminate\Http\Request;
 
 class TarefaController extends Controller
@@ -27,8 +28,8 @@ class TarefaController extends Controller
     public function create()
     {
         $users = User::all();
-        $tarefas = tarefa::all();
-        return view('cadastrar_tarefa', compact('users', 'tarefas'));
+        $tipos = Tipo::all();
+        return view('cadastrar_tarefa', compact('users', 'tipos'));
     }
 
     /**
@@ -45,7 +46,7 @@ class TarefaController extends Controller
         $tarefa->descricao = $request->input("descricao");
         $tarefa->status = $request->input("status");
         $tarefa->data = $request->input("data");
-        $tarefa->tarefa_id = $request->input("tarefa_id");
+        $tarefa->tipo_id = $request->input("tipo_id");
         $tarefa->usuario_id = $request->input("usuario_id");
         $tarefa->save();
         return redirect()->route('tarefas.index');
@@ -87,7 +88,7 @@ class TarefaController extends Controller
         $tarefa->descricao = $request->input("descricao");
         $tarefa->status = $request->input("status");
         $tarefa->data = $request->input("data");
-        $tarefa->tarefa_id = $request->input("tarefa_id");
+        $tarefa->tipo_id = $request->input("tipo_id");
         $tarefa->usuario_id = $request->input("usuario_id");
         $tarefa->save();
         return redirect()->route('tarefas.index');
