@@ -40,14 +40,15 @@
                 </li>
 
                 <ul class="nav justify-content-end cadastro">
-                    <li class="nav-item usu">
-                        
                     </li>
                     <li class="nav-item">
                         <form action="{{route('logout')}}" method="POST">
                             @csrf
                             <button class="btn bg-transparent text-dark logout" type="submit">Logout</button>
                         </form>
+                    </li>
+                    <li class="nav-item">
+                        <button class="btn bg-transparent text-dark logout" type="submit">{{Auth::user()->name}}</button>
                     </li>
                 </ul>
             </ul>

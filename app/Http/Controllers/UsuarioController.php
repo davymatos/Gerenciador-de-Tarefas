@@ -45,7 +45,7 @@ class UsuarioController extends Controller
      * @param  \App\Usuario  $Usuario
      * @return \Illuminate\Http\Response
      */
-    public function show(Usuario $Usuario)
+    public function show(User $User)
     {
         //
     }
@@ -71,9 +71,6 @@ class UsuarioController extends Controller
     public function update(Request $request, User $user)
     {
         $user->name = $request->input("name");
-        $user->sex = $request->input("sex");
-        $user->phone = $request->input("phone");
-        $user->date = $request->input("date");
         $user->login = $request->input("login");
         $user->email = $request->input("email");
         $user->password = $request->input("password");
