@@ -16,7 +16,6 @@ class CreateTarefasTable extends Migration
         Schema::create('tarefas', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('titulo');
-            $table->string('privacidade');
             $table->string('descricao');
             $table->string('status');
             $table->date('data');

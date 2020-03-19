@@ -10,9 +10,6 @@
                 <label for="titulo">Titulo</label>
                 <input  type = "text" class = "form-control" id="titulo" name="titulo" placeholder="Ex: Atividade de Matemática" value="" required>
                 <br>
-                <label for="privacidade">Privacidade</label>
-                <input  type = "text" class = "form-control" id="privacidade" name="privacidade" placeholder="Privada/Publica" value="" required>
-                <br>
                 <label for="descricao">Descrição</label>
                 <input  type = "text" class = "form-control" id="descricao" name="descricao" placeholder="" value="" required>
                 <br>

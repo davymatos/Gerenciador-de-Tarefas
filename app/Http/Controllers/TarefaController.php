@@ -42,7 +42,6 @@ class TarefaController extends Controller
     {
         $tarefa = new tarefa();
         $tarefa->titulo = $request->input("titulo");
-        $tarefa->privacidade = $request->input("privacidade");
         $tarefa->descricao = $request->input("descricao");
         $tarefa->status = $request->input("status");
         $tarefa->data = $request->input("data");
@@ -84,7 +83,6 @@ class TarefaController extends Controller
     public function update(Request $request, Tarefa $tarefa)
     {
         $tarefa->titulo = $request->input("titulo");
-        $tarefa->privacidade = $request->input("privacidade");
         $tarefa->descricao = $request->input("descricao");
         $tarefa->status = $request->input("status");
         $tarefa->data = $request->input("data");

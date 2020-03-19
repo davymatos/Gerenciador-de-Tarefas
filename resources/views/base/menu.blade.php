@@ -17,13 +17,6 @@
     <body>
         <div class="navbar">
             <ul class="nav nav-pills nav">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle bg-transparent text-dark" href="#" id="dropusuario" role="button" data-toggle="dropdown"  aria-haspopup="true" aria-expanded="false">
-                      Usuario
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{route('usuarios.index')}}">Visualizar</a>
-                    </div>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle bg-transparent text-dark" href="#" id="droptarefa" role="button" data-toggle="dropdown"  aria-haspopup="true" aria-expanded="false">

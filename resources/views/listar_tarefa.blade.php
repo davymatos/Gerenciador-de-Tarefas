@@ -13,7 +13,6 @@
                 <th scope="col">Status</th>
                 <th scope="col">Data de Conclusão</th>
                 <th scope="col">Tipo</th>
-                <th scope="col">Usuario</th>
                 </tr>
             </thead>
             <tbody>
@@ -26,7 +25,6 @@
                     <td>{{$tar->status}}</td>
                     <td>{{$tar->data}}</td>
                     <td>{{$tar->tipo_id}}</td>
-                    <td>{{$tar->usuario_id}}</td>
                     <td>
                         <form action = "{{route('tarefas.destroy', $tar)}}" method = "POST">
                             @csrf
