@@ -48,7 +48,7 @@
                         </form>
                     </li>
                     <li class="nav-item">
-                        <button class="btn bg-transparent text-dark logout" type="submit">{{Auth::user()->name}}</button>
+                        <button class="btn bg-transparent text-dark logout" type="submit">{{Auth::user()}}</button>
                     </li>
                 </ul>
             </ul>
