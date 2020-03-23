@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Gerenciador de Tarefas') }}</title>
+    <title>Gerenciador de Tarefas</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -24,7 +24,7 @@
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Gerenciador de Tarefas') }}
+                    Gerenciador de Tarefas
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -32,20 +32,40 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-
-                    </ul>
+                    @auth
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle bg-transparent text-dark" href="#" id="droptarefa" role="button" data-toggle="dropdown"  aria-haspopup="true" aria-expanded="false">
+                                    Tarefas
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{route('tarefas.create')}}">Cadastrar</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="{{route('tarefas.index')}}">Visualizar</a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle bg-transparent text-dark" href="#" id="droptipo" role="button" data-toggle="dropdown"  aria-haspopup="true" aria-expanded="false">
+                                    Tipos de Tarefas
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{route('tipos.create')}}">Cadastrar</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="{{route('tipos.index')}}">Visualizar</a>
+                                </div>
+                            </li>
+                        </ul>
+                    @endauth
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
                         @guest
-                            <li class="nav-item">
-                                <a class="nav-link" href="/">{{ __('Menu') }}</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                            </li>
+                            @if (Route::has('login'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                </li>
+                            @endif
                             @if (Route::has('register'))
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
@@ -76,7 +96,7 @@
         </nav>
 
         <main class="py-4">
-            @yield('content')
+            @yield('conteudo')
         </main>
     </div>
 </body>

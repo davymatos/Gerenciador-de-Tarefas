@@ -1,4 +1,4 @@
-@extends('base.menu', ["current"=>"usuario"])
+@extends('layouts.app', ["current"=>"usuario"])
 
 @section('conteudo')
     <form action = "{{route('usuario.update', $user)}}" method = "POST">

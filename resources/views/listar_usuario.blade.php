@@ -1,4 +1,4 @@
-@extends('base.menu', ["current"=>"users"])
+@extends('layouts.app', ["current"=>"users"])
 
 @section('conteudo')
 <div class="container tela">

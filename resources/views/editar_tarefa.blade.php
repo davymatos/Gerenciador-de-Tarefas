@@ -1,4 +1,4 @@
-@extends('base.menu', ["current"=>"tarefas"])
+@extends('layouts.app', ["current"=>"tarefas"])
 
 @section('conteudo')
     <form action = "{{route('tarefas.update', $tarefa)}}" method = "POST">

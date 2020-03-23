@@ -1,4 +1,4 @@
-@extends('base.menu', ["current"=>"tipos"])
+@extends('layouts.app', ["current"=>"tipos"])
 @section('conteudo')
 <form action = "{{route('tipos.store')}}" method = "POST">
     @csrf
